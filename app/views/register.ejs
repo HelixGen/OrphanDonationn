@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration - Make a Difference</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/images/img5.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.3rem;
+            color: #FFD700; /* Gold color for quote */
+            margin-bottom: 30px;
+        }
+
+        input[type="text"], input[type="email"], input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        button {
+            background-color: #FFD700; /* Gold button */
+            color: #333;
+            border: none;
+            padding: 15px;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #FFBF00;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .already-account {
+            margin-top: 20px;
+        }
+
+        .already-account a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .already-account a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 5px;
+            width: 100%;
+            font-size: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <% if (errors && errors.length > 0) { %> <!-- Check if errors is defined -->
+        <div style="color: red;">
+            <% errors.forEach(function(error) { %>
+                <p><%= error.msg %></p>
+            <% }); %>
+        </div>
+    <% } %>
+    <div class="overlay"></div>
+    
+    <div class="container">
+        <h1>Join Us in Making a Difference</h1>
+        <p>Every small act of kindness can create a ripple effect that changes lives. Your donation can help families in need, and together, we can make the world a better place.</p>
+        <div class="quote">"The best way to find yourself is to lose yourself in the service of others." – Mahatma Gandhi</div>
+
+        <form action="/auth/register" method="POST">
+            <div class="form-group">
+                <input type="text" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email Address" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <div class="form-group">
+                <input type="password" name="password2" placeholder=" Confirm Password" required>
+            </div>
+
+            <button type="submit">Register and Make a Difference</button>
+        </form>
+        <div class="already-account">
+            <p>Already have an account? <a href="/auth/login">Log in here</a>.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Make a Difference. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

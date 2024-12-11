@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Make a Difference</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('/images/donation\ page.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .quote {
+            font-style: italic;
+            font-size: 1.5rem;
+            color: #FFD700;
+            margin: 30px 0;
+        }
+
+        button {
+            background-color: #FFD700; /* Gold button */
+            color: #333;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #FFBF00;
+        }
+
+        footer {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            font-size: 1rem;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+        <h1>Welcome to Your Dashboard</h1>
+        <div class="quote">"Act as if what you do makes a difference. It does." – William James</div>
+        <p>Thank you for being a part of this mission to make the world a better place. Your efforts and contributions matter.</p>
+        <form action="/auth/dashboard/checkout" method="POST">
+        <button type="submit">Donate Now</button>
+    </form>
+    </div>
+    <a href="/auth/logout">Logout</a>
+    <footer>
+        <p>© 2024 Make a Difference. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
